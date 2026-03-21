@@ -1,0 +1,199 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Generic CSS */
+
+@font-face {
+    font-family: TG-Neighbor;
+    src: url("TG-Neighbor.otf") format("opentype");
+}
+
+body {
+    font-size: clamp(0.5rem, 2vw, 2rem);
+    /* font-size: 2vw; */
+}
+
+h1, h2 {
+    margin-bottom: clamp(0.5rem, 4vw, 2rem);
+    font-size: 3em;
+    font-family: 'TG-Neighbor', sans-serif;
+    font-weight: normal;
+}
+
+p, a {
+    font-family: urw-form-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: currentColor;
+}
+
+p {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+p + p {
+    margin-top: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    background-image: url("img/background.webp");
+    margin: 0;
+}
+
+header, main {
+    max-width: 1200px;
+    width: 90%;
+    margin: clamp(0.5rem, 3.5vw, 3rem) auto clamp(0.5rem, 5vw, 3rem);
+}
+
+/* Specific sections */
+
+header nav {
+    display: grid;
+    grid-template-columns: auto 10% 25px 25px;
+    gap: 15px;
+}
+
+#logo {
+    height: clamp(50px, 8vw, 150px);
+}
+
+header nav a {
+    text-decoration: none;
+    align-content: center;
+}
+
+header nav img {
+    height: 25px;
+}
+
+#intro h2 {
+    display: none;
+}
+
+ul.locations {
+    margin: clamp(0.5rem, 4vw, 3rem) 0;
+    font-size: 1.5em;
+    font-family: 'TG-Neighbor', sans-serif;
+}
+
+ul.locations li {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+/* Line between location and date */
+ul.locations li::before {
+    content: "";
+    flex-grow: 1;
+    height: 3px;
+    background: currentColor;
+    margin: 0 5px;
+    order: 1;
+}
+
+ul.locations .date {
+  order: 2;              
+  white-space: nowrap;
+}
+
+#event-list h2 {
+    display: none;
+}
+
+#event-list nav {
+    margin-bottom: 6vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1.5vw;
+}
+
+#event-list img {
+    width: 100%;
+    display: block;
+    border-radius: 1vw;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 3vw;
+}
+
+article > h2, article > .locations {
+    grid-column: span 2;
+}
+
+#supporters {
+    margin-top: 4vw;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 3vw;
+}
+
+footer {
+    padding: 5%;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+/* Small Screen Grid Adjustments */
+
+@media (max-width: 600px) {
+    #event-list nav {
+        grid-template-columns: auto auto auto;
+    }
+}
