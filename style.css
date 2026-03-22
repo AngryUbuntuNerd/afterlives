@@ -58,15 +58,22 @@ body {
     font-size: clamp(0.5rem, 4vw, 1.5rem);
 }
 
-h1, h2 {
-    margin-bottom: clamp(0.5rem, 3vw, 2rem);
+h1, h2, h3 {
+    margin-bottom: clamp(0.5rem, 3vh, 2rem);
     font-size: 2.5em;
     font-family: 'TG-Neighbor', sans-serif;
     font-weight: normal;
 }
 
 h2 {
-    margin-top: clamp(0.5rem, 6vw, 2rem);
+    margin-top: 0.8em;
+}
+
+h3 {
+    margin-bottom: clamp(0.5rem, 2vh, 2rem);
+    font-size: 1.5em;
+    font-family: 'TG-Neighbor', sans-serif;
+    font-weight: normal;
 }
 
 p, a {
@@ -78,11 +85,8 @@ p, a {
 
 p {
     margin-top: 0;
-    line-height: 1.2;
-}
-
-p + p {
-    margin-top: 1em;
+    line-height: 1.3;
+    margin-bottom: 1em;
 }
 
 img {
@@ -97,19 +101,19 @@ body {
 header, main {
     max-width: 1200px;
     width: 90%;
-    margin: clamp(0.5rem, 3.5vw, 3rem) auto clamp(0.5rem, 5vw, 3rem);
+    margin: clamp(0.5rem, 3.5vw, 2rem) auto clamp(0.5rem, 5vw, 2rem);
 }
 
 /* Specific sections */
 
 header nav {
     display: grid;
-    grid-template-columns: auto 10% 25px 25px;
+    grid-template-columns: auto min-content 25px 25px;
     gap: 15px;
 }
 
 #logo {
-    height: clamp(50px, 8vw, 150px);
+    height: clamp(50px, 8vw, 120px);
 }
 
 header nav a {
@@ -126,15 +130,15 @@ header nav img {
 }
 
 ul.locations {
-    margin: clamp(0.5rem, 4vw, 3rem) 0;
     font-size: 1.5em;
     font-family: 'TG-Neighbor', sans-serif;
+    margin-bottom: 0.5em;
 }
 
 ul.locations li {
     display: flex;
     align-items: center;
-    margin: 0.2em 0;
+    margin-bottom: 0.2em;
 }
 
 /* Line between location and date */
@@ -157,9 +161,10 @@ ul.locations .date {
 }
 
 #event-list nav {
-    margin-bottom: 6vw;
+    margin-top: clamp(0.5rem, 4vh, 3rem);
+    margin-bottom: 1em;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1.5vw;
 }
 
@@ -171,26 +176,50 @@ ul.locations .date {
 
 article {
     display: grid;
-    grid-template-columns: 15% auto;
+    grid-template-columns: 25% auto;
     column-gap: 3vw;
 }
 
-article > h2, article > .locations {
+article > h2 > span {
+    font-size: 0.5em;
+    white-space: nowrap;
+}
+
+article > h2, article > .locations, article > .info {
     grid-column: span 2;
 }
 
+article img {
+    margin-bottom: 3vh;
+}
+
+.info {
+    font-style: italic;
+}
+
 #supporters {
-    margin-top: 4vw;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 3vw;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+}
+
+#supporters li {
+    align-content: center;
+}
+
+#supporters img {
+    max-height: 100px;
 }
 
 footer {
-    padding: 5%;
+    padding: 2em;
     color: white;
     background-color: black;
     text-align: center;
+}
+
+#afterlife {
+    grid-template-columns: 15% auto;
 }
 
 /* Small Screen Grid Adjustments */
@@ -201,10 +230,24 @@ footer {
     }
 
     #event-list nav {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     article {
         grid-template-columns: 40% auto;
+    }
+
+    article > * {
+        grid-column: span 2;
+    }
+
+    article > img {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    article#afterlife > img, article#batman > img {
+        width: 60%
     }
 }
