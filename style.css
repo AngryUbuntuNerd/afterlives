@@ -108,8 +108,8 @@ header, main {
 
 header nav {
     display: grid;
-    grid-template-columns: auto min-content 25px 25px;
-    gap: 15px;
+    grid-template-columns: auto min-content min-content min-content 35px 35px;
+    gap: 25px;
 }
 
 #logo {
@@ -122,7 +122,7 @@ header nav a {
 }
 
 header nav img {
-    height: 25px;
+    height: 100%;
 }
 
 #intro h2 {
@@ -156,11 +156,11 @@ ul.locations .date {
   white-space: nowrap;
 }
 
-#event-list h2 {
+#programme h2 {
     display: none;
 }
 
-#event-list nav {
+#programme nav {
     margin-top: clamp(0.5rem, 4vh, 3rem);
     margin-bottom: 1em;
     display: grid;
@@ -168,10 +168,15 @@ ul.locations .date {
     gap: 1.5vw;
 }
 
-#event-list img {
+#programme img {
     width: 100%;
     display: block;
     border-radius: 1vw;
+    transition: all 0.2s ease;
+}
+
+#programme img:hover {
+    transform: scale(1.05);
 }
 
 article {
@@ -181,6 +186,7 @@ article {
 }
 
 article > h2 > span {
+    display: block;
     font-size: 0.5em;
     white-space: nowrap;
 }
@@ -229,7 +235,7 @@ footer {
         font-size: clamp(0.5rem, 4vw, 3rem);
     }
 
-    #event-list nav {
+    #programme nav {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
