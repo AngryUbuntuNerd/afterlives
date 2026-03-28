@@ -76,14 +76,14 @@ h3 {
     font-weight: normal;
 }
 
-p, a {
-    font-family: urw-form-condensed, sans-serif;
-    font-weight: 400;
-    font-style: normal;
+a {
     color: currentColor;
 }
 
 p {
+    font-family: urw-form-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin-top: 0;
     line-height: 1.3;
     margin-bottom: 1em;
@@ -106,17 +106,20 @@ header, main {
 
 /* Specific sections */
 
+#logo {
+    height: clamp(50px, 8vw, 120px);
+}
+
 header nav {
     display: grid;
     grid-template-columns: auto min-content min-content min-content 35px 35px;
     gap: 25px;
 }
 
-#logo {
-    height: clamp(50px, 8vw, 120px);
-}
-
 header nav a {
+    font-family: urw-form-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-decoration: none;
     align-content: center;
 }
@@ -127,6 +130,10 @@ header nav img {
 
 #intro h2 {
     display: none;
+}
+
+#intro .locations {
+    margin-bottom: 0;
 }
 
 ul.locations {
@@ -156,12 +163,27 @@ ul.locations .date {
   white-space: nowrap;
 }
 
+ul.locations .book {
+    background-color: #e73e67;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 0.6em;
+    padding: 0.4em;
+    border-radius: 0.2em;
+    order: 3;
+    margin-left: 5px;
+}
+
+#programme {
+    padding-top: clamp(0.5rem, 4vh, 3rem);
+}
+
 #programme h2 {
     display: none;
 }
 
 #programme nav {
-    margin-top: clamp(0.5rem, 4vh, 3rem);
     margin-bottom: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
