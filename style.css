@@ -137,7 +137,7 @@ header nav img {
 }
 
 ul.locations {
-    font-size: 1.5em;
+    font-size: clamp(1em, 5vw, 1.5em);
     font-family: 'TG-Neighbor', sans-serif;
     margin-bottom: 0.5em;
 }
@@ -159,8 +159,15 @@ ul.locations li::before {
 }
 
 ul.locations .date {
-  order: 2;              
+  order: 3;
   white-space: nowrap;
+}
+
+ul.locations .time {
+  order: 2;
+  margin: 0 10px;
+  white-space: nowrap;
+  color: #008594;
 }
 
 ul.locations .book {
